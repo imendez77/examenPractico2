@@ -29,6 +29,7 @@ public class IsraelReyes {
         int horasTrabajadas[] = new int[num];
         double salario[] = new double[num];
         double salarioTotal[] = new double[num];
+        double totalSalarios=0;
         int i=0;
         switch(menu)
         {
@@ -42,7 +43,7 @@ public class IsraelReyes {
                     
                     salario[i] = precioHora[i] * horasTrabajadas[i];
                     salarioTotal[i] = salario[i] - (salario[i] * 0.1);
-                    
+                    totalSalarios = totalSalarios + salarioTotal[i];
                     opcion = Integer.parseInt(JOptionPane.showInputDialog("¿Desea Agregar otro Empleado? \n[1]Sí \n[2]No"));
                     
                     if(opcion == 1)
@@ -54,7 +55,7 @@ public class IsraelReyes {
                         for(int j=0; j<=i; j++)
                         {
                             JOptionPane.showMessageDialog(null, "Empleado: "+nombre[j]+"\nPrecio de Hora: "+nf.format(precioHora[j])
-                                    +"\nHoras Trabajadas: "+horasTrabajadas[j]+"\nSalario Calculado: "+nf.format(salario[j])+"\nSalario Final: "+nf.format(salarioTotal[j]));
+                                    +"\nHoras Trabajadas: "+horasTrabajadas[j]+"\nSalario Calculado: "+nf.format(salario[j])+"\nSalario Final: "+nf.format(salarioTotal[j])+"\nTotal de Salarios: "+nf.format(totalSalarios));
                         }
                     }
                     
