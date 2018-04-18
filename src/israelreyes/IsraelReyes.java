@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 /**
  * Nombre de la clase: IsraelReyes
  * fecha: 18-04-18
- * version: 2.0
+ * version: 2.5
  * CopyRight: Israel Reyes
  * @author Israel Reyes
  */
@@ -51,22 +51,18 @@ public class IsraelReyes {
                     }else if(opcion == 2)   
                     {
                         opcion = 2;
-                        for(int j=0; j<=i; j++)
-                        {
-                            JOptionPane.showMessageDialog(null, "Empleado: "+nombre[j]+"\nPrecio de Hora: "+nf.format(precioHora[j])
-                                    +"\nHoras Trabajadas: "+horasTrabajadas[j]);
-                        }
                     }
                     
                 }while(opcion == 1);
                 break;
                 
             case 2:
-                for(int j=0; j<=i; j++)
+                /*for(int j=0; j<=i; j++)
                         {
                             JOptionPane.showMessageDialog(null, "Empleado: "+nombre[j]+"\nPrecio de Hora: "+nf.format(precioHora[j])
                                     +"\nHoras Trabajadas: "+horasTrabajadas[j]+"\nSalario Calculado: "+nf.format(salario[j])+"\nSalario Final: "+nf.format(salarioTotal[j]));
-                        }
+                        }*/
+                JOptionPane.showMessageDialog(null, " ");
                 break;
                 
             case 3:
@@ -74,10 +70,11 @@ public class IsraelReyes {
                 break;
                 
             default:
+                opc = 2;
                 break;
         }
         
-        opc = Integer.parseInt(JOptionPane.showInputDialog("¿Seguro que desea salir? \n[1] No \n[2] Si"));
+        opc = Integer.parseInt(JOptionPane.showInputDialog("¿Desea Regresar al Menu? \n[1] Si \n[2] No"));
         
         }while(opc == 1);
         
