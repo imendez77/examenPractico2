@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 /**
  * Nombre de la clase: IsraelReyes
  * fecha: 18-04-18
- * version: 2.5
+ * version: 2.5.2
  * CopyRight: Israel Reyes
  * @author Israel Reyes
  */
@@ -51,6 +51,11 @@ public class IsraelReyes {
                     }else if(opcion == 2)   
                     {
                         opcion = 2;
+                        for(int j=0; j<=i; j++)
+                        {
+                            JOptionPane.showMessageDialog(null, "Empleado: "+nombre[j]+"\nPrecio de Hora: "+nf.format(precioHora[j])
+                                    +"\nHoras Trabajadas: "+horasTrabajadas[j]+"\nSalario Calculado: "+nf.format(salario[j])+"\nSalario Final: "+nf.format(salarioTotal[j]));
+                        }
                     }
                     
                 }while(opcion == 1);
