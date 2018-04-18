@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 /**
  * Nombre de la clase: IsraelReyes
  * fecha: 18-04-18
- * version: 1.0
+ * version: 2.0
  * CopyRight: Israel Reyes
  * @author Israel Reyes
  */
@@ -18,18 +18,22 @@ public class IsraelReyes {
         int menu;
         NumberFormat nf = NumberFormat.getCurrencyInstance(Locale.US);
         
+        int opc = 2;
+        
+        do{
+            
         menu = Integer.parseInt(JOptionPane.showInputDialog("MENU \nSeleccione el número de la opción: \n[1]Agregar Empleado \n[2]Calcular planilla \n[3]Salir"));
-        int num = 30;
+        int num = 40;
         String nombre[] = new String[num];
         double precioHora[] = new double[num];
         int horasTrabajadas[] = new int[num];
         double salario[] = new double[num];
         double salarioTotal[] = new double[num];
-        
+        int i=0;
         switch(menu)
         {
             case 1:
-                int i=0;
+                
                 int opcion = 2;
                 do{
                     nombre[i] = JOptionPane.showInputDialog("Ingrese el nombre del empleado:");
@@ -50,7 +54,7 @@ public class IsraelReyes {
                         for(int j=0; j<=i; j++)
                         {
                             JOptionPane.showMessageDialog(null, "Empleado: "+nombre[j]+"\nPrecio de Hora: "+nf.format(precioHora[j])
-                                    +"\nHoras Trabajadas: "+horasTrabajadas[j]+"\nSalario Calculado: "+nf.format(salario[j])+"\nSalario Final: "+nf.format(salarioTotal[j]));
+                                    +"\nHoras Trabajadas: "+horasTrabajadas[j]);
                         }
                     }
                     
@@ -58,16 +62,24 @@ public class IsraelReyes {
                 break;
                 
             case 2:
+                for(int j=0; j<=i; j++)
+                        {
+                            JOptionPane.showMessageDialog(null, "Empleado: "+nombre[j]+"\nPrecio de Hora: "+nf.format(precioHora[j])
+                                    +"\nHoras Trabajadas: "+horasTrabajadas[j]+"\nSalario Calculado: "+nf.format(salario[j])+"\nSalario Final: "+nf.format(salarioTotal[j]));
+                        }
                 break;
                 
             case 3:
+                opc = 2;
                 break;
                 
             default:
                 break;
         }
         
+        opc = Integer.parseInt(JOptionPane.showInputDialog("¿Seguro que desea salir? \n[1] No \n[2] Si"));
         
+        }while(opc == 1);
         
         
     }
